@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0a0e1a;
+    color: #e5e7eb;
+  }
+}
+
+/* Map marker pulse */
+@keyframes wp-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.wp-map-marker {
+  will-change: transform;
+}
+
+/* MapLibre dark theme tweaks */
+.maplibregl-map {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.maplibregl-ctrl-zoom-in,
+.maplibregl-ctrl-zoom-out {
+  background-color: rgba(13, 19, 32, 0.9) !important;
+  color: #e5e7eb !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.maplibregl-ctrl-zoom-in:hover,
+.maplibregl-ctrl-zoom-out:hover {
+  background-color: rgba(34, 211, 238, 0.2) !important;
+  color: #22d3ee !important;
+}
+
+.maplibregl-ctrl-attrib {
+  background-color: rgba(10, 14, 26, 0.8) !important;
+  color: #6b7280 !important;
+}
+
+.maplibregl-ctrl-attrib a {
+  color: #9ca3af !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Fade-in animation */
+@keyframes wp-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wp-fade-in {
+  animation: wp-fade-in 0.3s ease-out;
+}
